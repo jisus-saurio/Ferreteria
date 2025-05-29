@@ -34,8 +34,8 @@ const Products = () => {
   const addOrUpdateProduct = () => {
     const method = editingProductId ? "PUT" : "POST";
     const url = editingProductId
-      ? `http://localhost:4000/api/products/${editingProductId}`
-      : "http://localhost:4000/api/products";
+      ? `/api/products/${editingProductId}`
+      : "/api/products";
 
     fetch(url, {
       method,
@@ -55,7 +55,7 @@ const Products = () => {
   };
 
   const deleteProduct = (id) => {
-    fetch(`http://localhost:4000/api/products/${id}`, { method: "DELETE" })
+    fetch(`/api/products/${id}`, { method: "DELETE" })
       .then(() => fetchProducts())
       .catch((error) => console.error("Error al eliminar producto:", error));
   };
