@@ -228,4 +228,4 @@ const styles = {
     transition: "0.3s",
   },
 };
-export  {Customers};
+export  default Customers;

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Nav";
 import Employees from "./pages/Employees";
-import { Customers } from "./pages/customers";
+import Customers from "./pages/customers";
 import Home from "./pages/Home";
 import Products from "./pages/Product";
 //creo que ya esta
