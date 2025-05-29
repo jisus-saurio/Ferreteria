@@ -1,9 +1,15 @@
 /*
     Campos:
-        nombre
-        descripcion
-        precio
-        stock
+      name  
+      lastName
+      birthday
+      email
+      address
+      password
+      hireDate
+      telephone
+      dui
+
 */
 
 import { Schema, model } from "mongoose";

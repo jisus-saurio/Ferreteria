@@ -48,9 +48,9 @@ loginController.login = async (req, res) => {
             //1.  ¿QUÉ VOY A GUARDAR?
             {id: userFound._id, userType},
             //2. Secreto
-            config.JWT.secret,
+            config.JWT.SECRET,
             //3. ¿Cuándo expira?
-            {expiresIn: config.JWT.expires},
+            {expiresIn: config.JWT.EXPIRES},
             //4. Función flecha
             (error, token) => {
                 if (error) console.log("error" + error);
