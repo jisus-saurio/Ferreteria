@@ -20,7 +20,7 @@ const app = express();
 //s// Importo la libreria cors
 
 app.use(cors({
-    origin: 'http://localhost:5173', // Cambia esto por la URL de tu frontend
+    origin: 'https://ferreteria-j0s7.onrender.com', // Cambia esto por la URL de tu frontend
     credentials: true, // Permite el envío de cookies
 }));
 //Que acepte datos en json

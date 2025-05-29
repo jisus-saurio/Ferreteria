@@ -20,7 +20,7 @@ const Employees = () => {
 
   const fetchEmployees = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/employee");
+      const response = await fetch("/api/employee");
       if (!response.ok) throw new Error("Error en la respuesta del servidor");
       const data = await response.json();
       setEmployees(data);
@@ -54,8 +54,8 @@ const Employees = () => {
   const addOrUpdateEmployee = async () => {
     const method = editingEmployeeId ? "PUT" : "POST";
     const url = editingEmployeeId
-      ? `http://localhost:4000/api/employee/${editingEmployeeId}`
-      : "http://localhost:4000/api/employee";
+      ? `/api/employee/${editingEmployeeId}`
+      : "/api/employee";
 
     try {
       await fetch(url, {
@@ -72,7 +72,7 @@ const Employees = () => {
 
   const deleteEmployee = async (id) => {
     try {
-      await fetch(`http://localhost:4000/api/employee/${id}`, {
+      await fetch(`/api/employee/${id}`, {
         method: "DELETE",
       });
       await fetchEmployees();

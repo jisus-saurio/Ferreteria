@@ -14,7 +14,7 @@ const Customers = () => {
   const [editingCustomerId, setEditingCustomerId] = useState(null);
 
   const fetchCustomers = () => {
-    fetch("http://localhost:4000/api/customers")
+    fetch("/api/customers")
       .then((response) => response.json())
       .then((data) => setCustomers(data))
       .catch((error) => console.error("Error al obtener clientes:", error));
@@ -35,8 +35,8 @@ const Customers = () => {
   const addOrUpdateCustomer = () => {
     const method = editingCustomerId ? "PUT" : "POST";
     const url = editingCustomerId
-      ? `http://localhost:4000/api/customers/${editingCustomerId}`
-      : "http://localhost:4000/api/customers";
+      ? `/api/customers/${editingCustomerId}`
+      : "/api/customers";
 
     fetch(url, {
       method,
@@ -61,7 +61,7 @@ const Customers = () => {
   };
 
   const deleteCustomer = (id) => {
-    fetch(`http://localhost:4000/api/customers/${id}`, { method: "DELETE" })
+    fetch(`/api/customers/${id}`, { method: "DELETE" })
       .then(() => fetchCustomers())
       .catch((error) => console.error("Error al eliminar cliente:", error));
   };
