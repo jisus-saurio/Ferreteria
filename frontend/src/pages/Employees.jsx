@@ -20,7 +20,7 @@ const Employees = () => {
 
   const fetchEmployees = async () => {
     try {
-      const response = await fetch("/api/employee");
+      const response = await fetch("https://ferreteria-j0s7.onrender.com/api/employee");
       if (!response.ok) throw new Error("Error en la respuesta del servidor");
       const data = await response.json();
       setEmployees(data);
@@ -54,8 +54,8 @@ const Employees = () => {
   const addOrUpdateEmployee = async () => {
     const method = editingEmployeeId ? "PUT" : "POST";
     const url = editingEmployeeId
-      ? `/api/employee/${editingEmployeeId}`
-      : "/api/employee";
+      ? `https://ferreteria-j0s7.onrender.com/api/employee/${editingEmployeeId}`
+      : "https://ferreteria-j0s7.onrender.com/api/employee";
 
     try {
       await fetch(url, {
@@ -72,7 +72,7 @@ const Employees = () => {
 
   const deleteEmployee = async (id) => {
     try {
-      await fetch(`/api/employee/${id}`, {
+      await fetch(`https://ferreteria-j0s7.onrender.com/api/employee/${id}`, {
         method: "DELETE",
       });
       await fetchEmployees();

@@ -35,8 +35,8 @@ const Customers = () => {
   const addOrUpdateCustomer = () => {
     const method = editingCustomerId ? "PUT" : "POST";
     const url = editingCustomerId
-      ? `/api/customers/${editingCustomerId}`
-      : "/api/customers";
+      ? `https://ferreteria-j0s7.onrender.com/api/customers/${editingCustomerId}`
+      : "https://ferreteria-j0s7.onrender.com/api/customers";
 
     fetch(url, {
       method,
@@ -61,7 +61,7 @@ const Customers = () => {
   };
 
   const deleteCustomer = (id) => {
-    fetch(`/api/customers/${id}`, { method: "DELETE" })
+    fetch(`https://ferreteria-j0s7.onrender.com/api/customers/${id}`, { method: "DELETE" })
       .then(() => fetchCustomers())
       .catch((error) => console.error("Error al eliminar cliente:", error));
   };
